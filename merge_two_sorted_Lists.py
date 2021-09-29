@@ -8,7 +8,6 @@ class Solution:
         self.l1 = l1
         self.l2 = l2
         self.l3 = None
-        self.head = None
         
         if not self.l1:
             return self.l2
@@ -22,8 +21,7 @@ class Solution:
             self.l3 = self.l2
             self.l2 = self.l2.next
 
-        self.head = self.l3
-        cur = self.head
+        cur = self.l3
         prev = None
 
         while self.l1 and self.l2:
