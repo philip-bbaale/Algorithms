@@ -48,7 +48,6 @@ class Solution:
             prev = cur
             prev.next = self.l1
             cur = prev.next
-            self.l1 = self.l1.next
     
         return self.l3
 
@@ -59,7 +58,7 @@ a.next.next.next = ListNode(6)
 a.next.next.next.next = ListNode(10)
 b = ListNode(0)
 b.next = ListNode(4)
-b.next.next = ListNode(5)
+b.next.next = ListNode(50)
 ans = Solution().mergeTwoLists(a,b)
 out = []
 while ans:
