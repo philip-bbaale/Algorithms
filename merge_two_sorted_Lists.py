@@ -22,25 +22,33 @@ class Solution:
             self.l3 = self.l2
             self.l2 = self.l2.next
 
+        self.head = self.l3
+        cur = self.head
+        prev = None
+
         while self.l1 and self.l2:
 
             if self.l1.val <= self.l2.val:
-                nxt = self.l3.next
-                self.l3.next = self.head
-                self.head = self.l1
-                self.l3 = nxt
+                prev = cur
+                prev.next = self.l1
+                cur = prev.next
                 self.l1 = self.l1.next
             else:
-                nxt = self.l3.next
-                self.l3.next = self.head
-                self.head = self.l1
-                self.l3 = nxt
+                prev = cur
+                prev.next = self.l2
+                cur = prev.next
                 self.l2 = self.l2.next
 
         if not self.l1:
-            self.l3.next = self.l2
+            prev = cur
+            prev.next = self.l2
+            cur = prev.next
+            self.l2 = self.l2.next
         if not self.l2:
-            self.l3.nexxt = self.l1
+            prev = cur
+            prev.next = self.l1
+            cur = prev.next
+            self.l1 = self.l1.next
     
         return self.l3
 
